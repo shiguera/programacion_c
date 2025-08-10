@@ -1,2 +1,6 @@
 # programacion_c
-Códifgo de ejercicios del libro Programación en C de Ed. Garceta
+# Autor: Santiago Higuera
+# 2025
+
+Código de los ejercicios del libro Programación en C de Ed. Garceta
+
