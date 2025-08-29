@@ -1,0 +1,11 @@
+Artículo        cantidad  Precio
+Mesa redonda     4        60.50
+Silla plegable   12       17.00
+Cajonera grande  3        23.45
+Perchero doble   5        15.90
+Lámpara de pie   2        45.20
+Estantería alta  6        72.10
+Mesa auxiliar    9        22.75
+Sofá cama        1        299.99
+Butaca relax     2        120.00
+Espejo decorativo 7       30.00

@@ -1,0 +1,3 @@
+Primera línea del fichero
+Segunda línea
+Tercera línea

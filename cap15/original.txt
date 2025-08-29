@@ -1,0 +1,3 @@
+Este es el contenido original
+que debe ser copiado
+a otro fichero.

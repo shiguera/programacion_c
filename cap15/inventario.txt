@@ -1,0 +1,11 @@
+Artículo   cantidad  Precio
+Mesa       4         60.50
+Silla      12        17.00
+Cajonera   3         23.45
+Perchero   5         15.90
+Librería   2         85.00
+Sofá       1         150.75
+Taburete   8         12.30
+Escritorio 3         95.20
+Estantería 6         45.60
+Alfombra   2         30.00

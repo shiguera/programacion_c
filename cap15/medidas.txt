@@ -1,0 +1,3 @@
+Altura 180 1.82
+Peso 75 75.0
+Longitud 120 1.20
