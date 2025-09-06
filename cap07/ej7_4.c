@@ -8,4 +8,7 @@ void saludo() {
 int main() {
    saludo();
    return 0;
+   int base = 3;
+int altura = 4;
+int area = base * altura;
 }
