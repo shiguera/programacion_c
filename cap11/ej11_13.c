@@ -3,7 +3,7 @@
 
 void cuenta_mayores100(const int* a, int n, int* contador) {
    if (a == NULL || n <= 0 || contador == NULL) {
-    return;
+      return;
    }
    int c = 0;
    for (int i=0; i<n; i++) {
