@@ -1,0 +1,279 @@
+// Ejercicio 12.1. Longitud de una palabra.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char palabra[100];
+   
+   printf("Introduce una palabra: ");
+   scanf("%s", palabra);
+   printf("Longitud: %lu\n", strlen(palabra));
+   return 0;
+}
+
+
+
+
+// Ejercicio 12.2. Copiar y mostrar.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char original[100];
+   char copia[100];
+   
+   printf("Introduce una palabra: ");
+   scanf("%s", original);
+   strcpy(copia, original);
+   printf("Original: %s\n", original);
+   printf("Copia: %s\n", copia);
+   return 0;
+}
+
+
+
+// Ejercicio 12.3. Comparación simple.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char cad1[100], cad2[100];
+   
+   printf("Introduce la primera palabra: ");
+   scanf("%s", cad1);
+   
+   printf("Introduce la segunda palabra: ");
+   scanf("%s", cad2);
+   
+   if (strcmp(cad1, cad2) == 0) {
+      printf("Las palabras son iguales.\n");
+   } else {
+      printf("Las palabras son diferentes.\n");
+   }
+   
+   return 0;
+}
+
+
+// Ejercicio 12.4. Buscar una letra.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char cadena[100];
+   char c;
+   
+   printf("Introduce una cadena: ");
+   scanf("%s", cadena);
+   
+   printf("Introduce un carácter: ");
+   scanf(" %c", &c); // Espacio antes de %c para ignorar el salto de línea
+   
+   char* pos = strchr(cadena, c);
+   
+   if (pos != NULL) {
+      printf("El carácter '%c' aparece en la posición %ld.\n", c, pos - cadena);
+   } else {
+      printf("El carácter no se encontró.\n");
+   }
+   
+   return 0;
+}
+
+
+// Ejercicio 12.5. Copia segura con límite.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char origen[100];
+   char destino[10];
+   
+   printf("Introduce una cadena: ");
+   scanf("%s", origen);
+   
+   strncpy(destino, origen, sizeof(destino) - 1);
+   destino[sizeof(destino) - 1] = '\0'; // Asegurar el carácter nulo
+   
+   printf("Destino: %s\n", destino);
+   return 0;
+}
+
+
+
+
+// Ejercicio 12.6. Comparar prefijos.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char s1[100], s2[100];
+   int n;
+   
+   printf("Introduce la primera cadena: ");
+   scanf("%s", s1);
+   
+   printf("Introduce la segunda cadena: ");
+   scanf("%s", s2);
+   
+   printf("Número de caracteres a comparar: ");
+   scanf("%d", &n);
+   
+   if (strncmp(s1, s2, n) == 0) {
+      printf("Coinciden en los primeros %d caracteres.\n", n);
+   } else {
+      printf("No coinciden en los primeros %d caracteres.\n", n);
+   }
+   
+   return 0;
+}
+
+
+
+
+
+// Ejercicio 12.7. Contar vocales usando strpbrk().
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char texto[100];
+   const char* vocales = "aeiouAEIOU";
+   int contador = 0;
+   
+   printf("Introduce una cadena: ");
+   scanf("%s", texto);
+   
+   for (int i = 0; texto[i] != '\0'; i++) {
+      if (strchr(vocales, texto[i]) != NULL) {
+         contador++;
+      }
+   }
+   
+   printf("Número de vocales: %d\n", contador);
+   return 0;
+}
+
+
+
+
+// Ejercicio 12.8. Detectar subcadenas prohibidas.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char frase[200];
+   
+   printf("Introduce una frase: ");
+   getchar(); // Limpiar búfer
+   fgets(frase, sizeof(frase), stdin);
+   
+   if (strstr(frase, "error") != NULL || strstr(frase, "peligro") != NULL ||
+         strstr(frase, "prohibido") != NULL) {
+      printf("Advertencia: la frase contiene palabras prohibidas.\n");
+   } else {
+      printf("Frase aceptada.\n");
+   }
+   
+   return 0;
+}
+
+
+
+
+// Ejercicio 12.9. Validación numérica.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char codigo[100];
+   
+   printf("Introduce un código: ");
+   scanf("%s", codigo);
+   
+   if (strspn(codigo, "0123456789") == strlen(codigo)) {
+      printf("El código es válido (solo dígitos).\n");
+   } else {
+      printf("El código contiene caracteres no numéricos.\n");
+   }
+   
+   return 0;
+}
+
+
+
+
+// Ejercicio 12.10. Tokenización de una frase.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char frase[200];
+   
+   printf("Introduce una frase: ");
+   fgets(frase, sizeof(frase), stdin);
+   
+   // Eliminar el salto de línea final
+   frase[strcspn(frase, "\n")] = '\0';
+   
+   char* palabra = strtok(frase, " ");
+   
+   while (palabra != NULL) {
+      printf("Palabra: %s\n", palabra);
+      palabra = strtok(NULL, " ");
+   }
+   
+   return 0;
+}
+
+
+
+
+// Ejercicio 12.11. Reemplazar todas las letras 'a' por 'x'.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char texto[100];
+   
+   printf("Introduce una cadena: ");
+   scanf("%s", texto);
+   
+   for (int i = 0; texto[i] != '\0'; i++) {
+      if (texto[i] == 'a') {
+         texto[i] = 'x';
+      }
+   }
+   
+   printf("Cadena modificada: %s\n", texto);
+   return 0;
+}
+
+
+
+
+// Ejercicio 12.12. Medir la longitud hasta una letra.
+   #include <stdio.h>
+   #include <string.h>
+   
+   int main() {
+      char texto[100];
+      char c;
+      
+      printf("Introduce una cadena: ");
+      scanf("%s", texto);
+      
+      printf("Introduce el carácter a buscar: ");
+      scanf(" %c", &c);
+      
+      size_t pos = strcspn(texto, (char[]){c, '\0'});
+      
+      if (pos < strlen(texto)) {
+         printf("La letra '%c' aparece tras %zu caracteres.\n", c, pos);
+      } else {
+         printf("El carácter no se encuentra en la cadena.\n");
+      }
+      
+      return 0;
+   }
+
