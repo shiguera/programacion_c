@@ -1,0 +1,7 @@
+NOMBRE                            STOCK     PRECIO
+------------------------------ -------- ----------
+Manzanas                             50       0.37
+Leche                                30       1.25
+Pan integral                         20       1.10
+Queso fresco                         15       2.60
+Arroz                                80       0.90
